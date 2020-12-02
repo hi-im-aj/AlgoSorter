@@ -4,14 +4,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
    <children>
-      <Label layoutX="229.0" layoutY="69.0" text="Algo Sorter">
+      <Label layoutX="229.0" layoutY="79.0" text="Algo Sorter">
          <font>
             <Font name="Raleway Bold" size="26.0" />
          </font>
       </Label>
-      <Button layoutX="242.0" layoutY="142.0" mnemonicParsing="false" onAction="#changeView" style="-fx-background-color: teal; -fx-text-fill: white; -fx-font-size: 18; -fx-border-style: none;" text="Bubble Sort" textAlignment="CENTER" />
-      <Button layoutX="242.0" layoutY="191.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: teal; -fx-text-fill: white; -fx-font-size: 18; -fx-border-style: none;" text="Exit" textAlignment="CENTER" />
+      <Button layoutX="242.0" layoutY="202.0" mnemonicParsing="false" onAction="#changeScreenToBubbleSort" style="-fx-background-color: teal; -fx-text-fill: white; -fx-font-size: 18; -fx-border-style: none;" text="Bubble Sort" textAlignment="CENTER" />
+      <Button layoutX="242.0" layoutY="253.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: teal; -fx-text-fill: white; -fx-font-size: 18; -fx-border-style: none;" text="Exit" textAlignment="CENTER" />
    </children>
 </AnchorPane>

@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage window) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         window.setTitle("AlgoSorter");
-        window.setScene(new Scene(root, 800, 600));
+        window.setScene(new Scene(root, 600, 400));
         window.show();
     }
 
