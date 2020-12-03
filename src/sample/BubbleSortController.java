@@ -26,6 +26,7 @@ public class BubbleSortController implements Initializable {
     private BarChart<String, Number> barChart;
 
     private int[] data;
+    private XYChart.Series<String, Number> series = new XYChart.Series<>();
 
     public void changeScreenToMain(ActionEvent e) throws IOException {
         Parent bubbleSortParent = FXMLLoader.load(getClass().getResource("Main.fxml"));
@@ -40,19 +41,33 @@ public class BubbleSortController implements Initializable {
     }
 
     public void sort() {
-        barChart.getData().clear();
+        int temp;
+        for (int i = 0; i < this.data.length; i++) {
+            for (int j = 1; j < this.data.length - i; j++) {
+                if(this.data[j] < this.data[j - 1]) {
+                    temp = this.data[j];
+                    this.data[j] = this.data[j - 1];
+                    this.data[j - 1] = temp;
+
+                    barChart.getData().clear();
+                    this.series = new XYChart.Series<>();
+                    for (int k = 0; k < this.data.length; k++) {
+                        this.series.getData().add(new XYChart.Data<>(Integer.toString(k + 1),this.data[k]));
+                    }
+                    barChart.getData().add(this.series);
+                }
+            }
+        }
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.data = randomArray(10);
 
-        XYChart.Series<String, Number> series = new XYChart.Series<>();
         for (int i = 0; i < this.data.length; i++) {
-            series.getData().add(new XYChart.Data<>(Integer.toString(i + 1),this.data[i]));
+            this.series.getData().add(new XYChart.Data<>(Integer.toString(i + 1),this.data[i]));
         }
-
         barChart.setAnimated(false);
-        barChart.getData().add(series);
+        barChart.getData().add(this.series);
     }
     public int[] randomArray(int size) {
         int[] arr = new int[size];
