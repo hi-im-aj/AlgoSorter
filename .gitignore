@@ -1,5 +1,6 @@
 # Production related
 /out/
+DateLog.txt
 
 # Compiled class file
 *.class
